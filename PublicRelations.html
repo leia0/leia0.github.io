@@ -3,16 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <title>錫口服青社公關交接文件</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body {
-      font-family: "Helvetica Neue", sans-serif;
+    html, body {
       margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", sans-serif;
       background-color: #f9f9f9;
       color: #333;
+      line-height: 1.6;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
+
+    a {
+      color: #2c3e50;
+      text-decoration: none;
+      display: inline-block;
+      word-break: break-all;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     .container {
       display: flex;
+      flex-direction: row;
     }
+
     nav {
       width: 220px;
       min-height: 100vh;
@@ -21,30 +40,29 @@
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
+      transition: all 0.3s ease;
     }
+
     nav h2 {
       font-size: 18px;
       margin-bottom: 10px;
+      cursor: pointer;
     }
+
     nav ul {
       list-style: none;
       padding-left: 0;
     }
+
     nav li {
       margin-bottom: 10px;
-    }
-    nav a {
-      text-decoration: none;
-      color: #2c3e50;
-    }
-    nav a:hover {
-      text-decoration: underline;
     }
 
     main {
       flex: 1;
       padding: 40px;
-      max-width: 800px;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     h1 {
@@ -63,51 +81,51 @@
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 8px;
+      word-break: break-word;
     }
 
     ul {
       margin-left: 20px;
+      padding-left: 0;
     }
 
     #toggleAccountsBtn {
-      background-color: #f9f9f9;
-      color: white;
-      border: none;
+      background-color:transparent;
+
+      border: 1px solid transparent;
       padding: 10px 15px;
       border-radius: 5px;
       cursor: pointer;
       margin-top: 15px;
     }
 
-    #toggleAccountsBtn:hover,
-    #downloadBtn:hover {
-      background-color: #f9f9f9;
+    #toggleAccountsBtn:hover {
+      background-color: #e1e1e1;
     }
-    
-    .section-relative {
-    position: relative;
-  }
-  .toggle-btn-top-right {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .toggle-btn-top-right:hover {
-    background-color: #2a80b9;
-  }
+
+    .toggle-btn-top-right {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .toggle-btn-top-right:hover {
+      background-color: #2a80b9;
+    }
+
     button.copyBtn {
       font-size: 14px;
       margin-left: 5px;
       padding: 2px 6px;
       border-radius: 4px;
-      border: 1px solid #f9f9f9;
-      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
       cursor: pointer;
     }
 
@@ -119,15 +137,54 @@
     }
 
     @media (max-width: 768px) {
+      body {
+        font-size: 15px;
+      }
+
       .container {
         flex-direction: column;
       }
+
       nav {
         width: 100%;
         position: relative;
         min-height: auto;
         box-shadow: none;
         border-bottom: 1px solid #ccc;
+        padding: 10px 15px;
+      }
+
+      nav h2::after {
+        content: " ☰";
+        float: right;
+        font-size: 20px;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      nav.show ul {
+        display: flex;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .toggle-btn-top-right {
+        right: 10px;
+        top: 10px;
+        font-size: 13px;
+        padding: 5px 8px;
+      }
+
+      button.copyBtn {
+        font-size: 12px;
+        padding: 2px 4px;
       }
     }
   </style>
@@ -150,17 +207,16 @@
       <div class="section" id="duties">
         <h2>一、職務說明</h2>
         <ul>
-            <li>於當年度社長上任時，設計並製作當年度社團對外名片。</li>
-            <li>設計年度例會行事曆。</li>
-            <li>撰寫並發布例會宣傳文案，透過社群平台提升活動能見度與參與度。</li>
-            <li>規劃新社員招募宣傳策略。</li>
+          <li>於當年度社長上任時，設計並製作當年度社團對外名片。</li>
+          <li>設計年度例會行事曆。</li>
+          <li>撰寫並發布例會宣傳文案，透過社群平台提升活動能見度與參與度。</li>
+          <li>規劃新社員招募宣傳策略。</li>
         </ul>
       </div>
 
       <div class="section" id="tools">
         <h2>二、常用工具/帳號/參考資料</h2>
-          <!-- 右上角按鈕 -->
-          <button id="toggleAccountsBtn" class="toggle-btn-top-right">✨顯示</button>
+        <button id="toggleAccountsBtn" class="toggle-btn-top-right">✨</button>
         <ul>
           <li>名片製作 
             <br>Canva：<br><a href="https://www.canva.com/design/DAGFX1ZFoqI/IdmaiTbTVvIwMl-pqOHJJQ/edit" target="_blank">
@@ -173,8 +229,7 @@
             https://www.canva.com/design/DAGJabwJ4yw/09qsYeQs0aWPDXi-811eTw/edit</a></li>
           <li>社團 IG 管理權限：會協助開通</li>
         </ul>
-          <!-- 預設隱藏密碼清單 -->
-          <ul id="accountList" style="display: none; margin-top: 15px;"></ul>
+        <ul id="accountList" style="display: none; margin-top: 15px;"></ul>
       </div>
 
       <div class="section" id="tasks">
@@ -188,11 +243,11 @@
       <div class="section" id="advice">
         <h2>四、建議與提醒</h2>
         <ul>
-          <li>例會宣傳:</br>提早規劃社群平台貼文，建議在活動前 3～7 天開始暖場預告。搭配文案與報名連結。</li>
-          <li>宣傳文案:</br>公關上任初期，ＰＯ文前建議將內容先傳給當年度社長過目確認在ＰＯ。</li>
-          <li>照片紀錄:</br>確保活動有照片（如無法參加例會，可請有參加的社員代拍）。</li>
-          <li>宣傳文案：</br>務必標明活動時間地點，ＩＧ限動可標記社員。</li>
-          <li>使用Logo：</br>所有社團輸出物（海報、簡報、影片）需使用扶青社當年度要求的Logo，避免變形。</li>
+          <li>例會宣傳:<br>提早規劃社群平台貼文，建議在活動前 3～7 天開始暖場預告。搭配文案與報名連結。</li>
+          <li>宣傳文案:<br>公關上任初期，ＰＯ文前建議將內容先傳給當年度社長過目確認在ＰＯ。</li>
+          <li>照片紀錄:<br>確保活動有照片（如無法參加例會，可請有參加的社員代拍）。</li>
+          <li>宣傳文案：<br>務必標明活動時間地點，ＩＧ限動可標記社員。</li>
+          <li>使用Logo：<br>所有社團輸出物（海報、簡報、影片）需使用扶青社當年度要求的Logo，避免變形。</li>
         </ul>
       </div>
 
@@ -202,58 +257,64 @@
     </main>
   </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const accountData = [
-    {
-      name: "IG帳號",
-      username: "ＸＤ稍後提供",
-      passwordEnc: "S2FvcmkyMDI1IQ=="
-    }
-  ];
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const accountData = [
+        {
+          name: "IG帳號",
+          username: "ＸＤ稍後提供",
+          passwordEnc: "S2FvcmkyMDI1IQ=="
+        }
+      ];
 
-  function decodePassword(enc) {
-    try { return atob(enc); } catch { return "(解碼失敗)"; }
-  }
+      function decodePassword(enc) {
+        try { return atob(enc); } catch { return "(解碼失敗)"; }
+      }
 
-  function copyPassword(pwd) {
-    navigator.clipboard.writeText(pwd).then(() => alert("密碼已複製！"));
-  }
+      function copyPassword(pwd) {
+        navigator.clipboard.writeText(pwd).then(() => alert("密碼已複製！"));
+      }
 
-  const toggleBtn = document.getElementById("toggleAccountsBtn");
-  const listEl = document.getElementById("accountList");
-  let revealed = false;
+      const toggleBtn = document.getElementById("toggleAccountsBtn");
+      const listEl = document.getElementById("accountList");
+      let revealed = false;
 
-  toggleBtn.addEventListener("click", () => {
-    if (revealed) {
-      listEl.style.display = "none";
-      listEl.innerHTML = "";
-      toggleBtn.textContent = "✨帳密";
-      revealed = false;
-    } else {
-      listEl.innerHTML = accountData.map((acc, idx) => {
-        const pwd = decodePassword(acc.passwordEnc);
-        return `
-          <li>
-            <strong>${acc.name}</strong><br>
-            帳號：${acc.username}<br>
-            密碼：<span>${pwd}</span>
-            <button class="copyBtn" data-pwd="${pwd}" title="複製密碼">📋</button>
-          </li>
-        `;
-      }).join("");
-      listEl.style.display = "block";
-      toggleBtn.textContent = "☆隱藏帳密";
-      revealed = true;
-    }
-  });
+      toggleBtn.addEventListener("click", () => {
+        if (revealed) {
+          listEl.style.display = "none";
+          listEl.innerHTML = "";
+          toggleBtn.textContent = "✨";
+          revealed = false;
+        } else {
+          listEl.innerHTML = accountData.map((acc) => {
+            const pwd = decodePassword(acc.passwordEnc);
+            return `
+              <li>
+                <strong>${acc.name}</strong><br>
+                帳號：${acc.username}<br>
+                密碼：<span>${pwd}</span>
+                <button class="copyBtn" data-pwd="${pwd}" title="複製密碼">📋</button>
+              </li>
+            `;
+          }).join("");
+          listEl.style.display = "block";
+          toggleBtn.textContent = "☆隱藏帳密";
+          revealed = true;
+        }
+      });
 
-  listEl.addEventListener("click", (e) => {
-    if (e.target.classList.contains("copyBtn")) {
-      copyPassword(e.target.dataset.pwd);
-    }
-  });
-});
-</script>
+      listEl.addEventListener("click", (e) => {
+        if (e.target.classList.contains("copyBtn")) {
+          copyPassword(e.target.dataset.pwd);
+        }
+      });
+
+      const nav = document.querySelector("nav");
+      const navTitle = nav.querySelector("h2");
+      navTitle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
 </body>
 </html>
