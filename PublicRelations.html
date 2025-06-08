@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>社團公關交接文件</title>
+  <title>錫口服青社公關交接文件</title>
   <style>
     body {
       font-family: "Helvetica Neue", sans-serif;
@@ -69,9 +69,8 @@
       margin-left: 20px;
     }
 
-    #toggleAccountsBtn,
-    #downloadBtn {
-      background-color: #3498db;
+    #toggleAccountsBtn {
+      background-color: #fff;
       color: white;
       border: none;
       padding: 10px 15px;
@@ -82,16 +81,33 @@
 
     #toggleAccountsBtn:hover,
     #downloadBtn:hover {
-      background-color: #2a80b9;
+      background-color: #fff;
     }
-
+    
+    .section-relative {
+    position: relative;
+  }
+  .toggle-btn-top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .toggle-btn-top-right:hover {
+    background-color: #2a80b9;
+  }
     button.copyBtn {
       font-size: 14px;
       margin-left: 5px;
       padding: 2px 6px;
       border-radius: 4px;
-      border: 1px solid #ccc;
-      background-color: #f0f0f0;
+      border: 1px solid #fff;
+      background-color: #fff;
       cursor: pointer;
     }
 
@@ -129,7 +145,7 @@
     </nav>
 
     <main>
-      <h1>社團公關幹部交接文件</h1>
+      <h1>錫口服青社公關交接文件</h1>
 
       <div class="section" id="duties">
         <h2>一、職務說明</h2>
@@ -143,13 +159,22 @@
 
       <div class="section" id="tools">
         <h2>二、常用工具/帳號/參考資料</h2>
+          <!-- 右上角按鈕 -->
+          <button id="toggleAccountsBtn" class="toggle-btn-top-right">👁️ 顯示帳密</button>
         <ul>
-          <li>名片製作 Canva:</br>https://www.canva.com/design/DAGFX1ZFoqI/IdmaiTbTVvIwMl-pqOHJJQ/edit</li>
-          <li>年度行事曆製作 Canva:</br>https://www.canva.com/design/DAGJabwJ4yw/09qsYeQs0aWPDXi-811eTw/edit</li>
-          <li>社團 IG 管理權限：已交由下一任開通</li>
+          <li>名片製作 
+            <br>Canva：<br><a href="https://www.canva.com/design/DAGFX1ZFoqI/IdmaiTbTVvIwMl-pqOHJJQ/edit" target="_blank">
+            https://www.canva.com/design/DAGFX1ZFoqI/IdmaiTbTVvIwMl-pqOHJJQ/edit</a>
+            <br>電子名片參考文件：<br><a href="https://drive.google.com/drive/folders/1-6-qHKJP8TlnOeCu9U6J7E8kFr2adTNI?usp=sharing" target="_blank">
+            https://drive.google.com/drive/folders/1-6-qHKJP8TlnOeCu9U6J7E8kFr2adTNI?usp=sharing</a>
+          </li>
+          <li>年度行事曆製作 
+            <br>Canva：<br><a href="https://www.canva.com/design/DAGJabwJ4yw/09qsYeQs0aWPDXi-811eTw/edit" target="_blank">
+            https://www.canva.com/design/DAGJabwJ4yw/09qsYeQs0aWPDXi-811eTw/edit</a></li>
+          <li>社團 IG 管理權限：會協助開通</li>
         </ul>
-        <button id="toggleAccountsBtn">👁️ 顯示帳密</button>
-        <ul id="accountList" style="display: none;"></ul>
+          <!-- 預設隱藏密碼清單 -->
+          <ul id="accountList" style="display: none; margin-top: 15px;"></ul>
       </div>
 
       <div class="section" id="tasks">
@@ -163,14 +188,13 @@
       <div class="section" id="advice">
         <h2>四、建議與提醒</h2>
         <ul>
-          <li>例會宣傳:提早規劃社群平台貼文，建議在活動前 3～7 天開始暖場預告。搭配文案與報名連結。</li>
-          <li>照片紀錄:確保活動有照片（如無法參加例會，可請有參加的社員代拍）。</li>
-          <li>宣傳文案：務必標明活動時間地點，ＩＧ限動可標記社員。</li>
-          <li>使用Logo：所有社團輸出物（海報、簡報、影片）需使用扶青社當年度要求的Logo，避免變形。</li>
+          <li>例會宣傳:</br>提早規劃社群平台貼文，建議在活動前 3～7 天開始暖場預告。搭配文案與報名連結。</li>
+          <li>宣傳文案:</br>公關上任初期，ＰＯ文前建議將內容先傳給當年度社長過目確認在ＰＯ。</li>
+          <li>照片紀錄:</br>確保活動有照片（如無法參加例會，可請有參加的社員代拍）。</li>
+          <li>宣傳文案：</br>務必標明活動時間地點，ＩＧ限動可標記社員。</li>
+          <li>使用Logo：</br>所有社團輸出物（海報、簡報、影片）需使用扶青社當年度要求的Logo，避免變形。</li>
         </ul>
       </div>
-
-      <button id="downloadBtn">📥 下載此交接文件</button>
 
       <footer>
         最後更新：2025 年 6 月 | 編輯：上一任公關幹部 Ｌｅｉａ
@@ -180,17 +204,11 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  // 帳密資料（Base64 密碼）
   const accountData = [
     {
       name: "Canva 設計帳號",
       username: "canva_pr_tw@gmail.com",
       passwordEnc: "S2FvcmkyMDI1IQ=="
-    },
-    {
-      name: "Notion 公關資料庫",
-      username: "pr.notion.tw@gmail.com",
-      passwordEnc: "Tm90aW9uUFIyMDI1Iw=="
     },
     {
       name: "社團表單管理",
@@ -199,20 +217,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
-  function decodePassword(encoded) {
-    try {
-      return atob(encoded);
-    } catch {
-      return "(解碼失敗)";
-    }
+  function decodePassword(enc) {
+    try { return atob(enc); } catch { return "(解碼失敗)"; }
   }
 
-  function copyPassword(text) {
-    navigator.clipboard.writeText(text).then(() => {
-      alert("密碼已複製！");
-    }, () => {
-      alert("複製失敗，請手動選取！");
-    });
+  function copyPassword(pwd) {
+    navigator.clipboard.writeText(pwd).then(() => alert("密碼已複製！"));
   }
 
   const toggleBtn = document.getElementById("toggleAccountsBtn");
@@ -232,8 +242,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <li>
             <strong>${acc.name}</strong><br>
             帳號：${acc.username}<br>
-            密碼：<span id="pwd-${idx}">${pwd}</span>
-            <button class="copyBtn" onclick="copyPassword('${pwd}')" title="複製密碼">📋</button>
+            密碼：<span>${pwd}</span>
+            <button class="copyBtn" data-pwd="${pwd}" title="複製密碼">📋</button>
           </li>
         `;
       }).join("");
@@ -243,17 +253,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // 下載按鈕
-  document.getElementById("downloadBtn").addEventListener("click", function () {
-    const htmlContent = document.documentElement.outerHTML;
-    const blob = new Blob([htmlContent], { type: "text/html" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "PR_Transition.html";
-    link.click();
+  listEl.addEventListener("click", (e) => {
+    if (e.target.classList.contains("copyBtn")) {
+      copyPassword(e.target.dataset.pwd);
+    }
   });
 });
 </script>
-
 </body>
 </html>
