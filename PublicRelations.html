@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>社團公關交接文件</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    h1 {
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .section {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    nav {
+      background-color: #eaf2fb;
+      padding: 15px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+    }
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    nav li {
+      margin-bottom: 8px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    #downloadBtn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #downloadBtn:hover {
+      background-color: #2a80b9;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>社團公關幹部交接文件</h1>
+
+  <nav>
+    <strong>📑 目錄</strong>
+    <ul>
+      <li><a href="#duties">一、職責說明</a></li>
+      <li><a href="#tools">二、常用工具/帳號</a></li>
+      <li><a href="#tasks">三、定期任務</a></li>
+      <li><a href="#advice">四、建議與提醒</a></li>
+      <li><a href="#attachments">五、附加資料</a></li>
+    </ul>
+  </nav>
+
+  <div class="section" id="duties">
+    <h2>一、職責說明</h2>
+    <ul>
+      <li>對外聯繫廠商、協辦單位、場地等事宜。</li>
+      <li>撰寫與發送公文、邀請函、感謝函。</li>
+      <li>維護社團對外形象（如：Facebook、Instagram、公關文案）。</li>
+      <li>活動贊助洽談與紀錄。</li>
+    </ul>
+  </div>
+
+  <div class="section" id="tools">
+    <h2>二、常用工具/帳號</h2>
+    <ul>
+      <li>社團 Gmail：xxxxxx@gmail.com</li>
+      <li>Canva / 美編帳號：帳號與密碼請參見附件文件</li>
+      <li>社團 IG / FB 管理權限：已交由下一任開通</li>
+    </ul>
+  </div>
+
+  <div class="section" id="tasks">
+    <h2>三、定期任務</h2>
+    <ul>
+      <li>每學期初：整理並更新社團聯絡清單與贊助廠商名單。</li>
+      <li>每次活動前：製作文宣圖、邀請合作單位、協助場地確認。</li>
+      <li>每次活動後：發送感謝函、上傳活動照片、彙整回饋。</li>
+    </ul>
+  </div>
+
+  <div class="section" id="advice">
+    <h2>四、建議與提醒</h2>
+    <ul>
+      <li>建立廠商聯絡資料表（建議用 Google Sheet）。</li>
+      <li>對外信件注意禮貌與格式，維持良好印象。</li>
+      <li>美編與文案請提早與設計負責人協調。</li>
+      <li>若不確定回應內容，可先與指導老師或社長討論。</li>
+    </ul>
+  </div>
+
+  <div class="section" id="attachments">
+    <h2>五、附加資料</h2>
+    <ul>
+      <li>活動照片雲端連結（Google Drive）：[請更新連結]</li>
+      <li>歷屆贊助商資料：<a href="#">下載 Excel 檔</a></li>
+      <li>公關信件模板：<a href="#">下載 Word 檔</a></li>
+    </ul>
+  </div>
+
+  <button id="downloadBtn">📥 下載交接 HTML</button>
+
+  <footer>
+    最後更新：2025 年 6 月 &nbsp;|&nbsp; 編輯：上一任公關幹部
+  </footer>
+
+  <script>
+    document.getElementById("downloadBtn").addEventListener("click", function () {
+      const htmlContent = document.documentElement.outerHTML;
+      const blob = new Blob([htmlContent], { type: "text/html" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "PR_Transition.html";
+      link.click();
+    });
+  </script>
+</body>
+</html>
