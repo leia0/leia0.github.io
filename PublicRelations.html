@@ -70,7 +70,7 @@
     }
 
     #toggleAccountsBtn {
-      background-color: #fff;
+      background-color: #f9f9f9;
       color: white;
       border: none;
       padding: 10px 15px;
@@ -81,7 +81,7 @@
 
     #toggleAccountsBtn:hover,
     #downloadBtn:hover {
-      background-color: #fff;
+      background-color: #f9f9f9;
     }
     
     .section-relative {
@@ -106,8 +106,8 @@
       margin-left: 5px;
       padding: 2px 6px;
       border-radius: 4px;
-      border: 1px solid #fff;
-      background-color: #fff;
+      border: 1px solid #f9f9f9;
+      background-color: #f9f9f9;
       cursor: pointer;
     }
 
@@ -160,7 +160,7 @@
       <div class="section" id="tools">
         <h2>二、常用工具/帳號/參考資料</h2>
           <!-- 右上角按鈕 -->
-          <button id="toggleAccountsBtn" class="toggle-btn-top-right">👁️ 顯示帳密</button>
+          <button id="toggleAccountsBtn" class="toggle-btn-top-right">✨顯示</button>
         <ul>
           <li>名片製作 
             <br>Canva：<br><a href="https://www.canva.com/design/DAGFX1ZFoqI/IdmaiTbTVvIwMl-pqOHJJQ/edit" target="_blank">
@@ -206,14 +206,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const accountData = [
     {
-      name: "Canva 設計帳號",
-      username: "canva_pr_tw@gmail.com",
+      name: "IG帳號",
+      username: "ＸＤ稍後提供",
       passwordEnc: "S2FvcmkyMDI1IQ=="
-    },
-    {
-      name: "社團表單管理",
-      username: "forms.manager@club.org",
-      passwordEnc: "Rm9ybXMxMjM0"
     }
   ];
 
@@ -233,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (revealed) {
       listEl.style.display = "none";
       listEl.innerHTML = "";
-      toggleBtn.textContent = "👁️ 顯示帳密";
+      toggleBtn.textContent = "✨帳密";
       revealed = false;
     } else {
       listEl.innerHTML = accountData.map((acc, idx) => {
@@ -248,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
       }).join("");
       listEl.style.display = "block";
-      toggleBtn.textContent = "🙈 隱藏帳密";
+      toggleBtn.textContent = "☆隱藏帳密";
       revealed = true;
     }
   });
